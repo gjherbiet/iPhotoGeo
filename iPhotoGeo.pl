@@ -145,8 +145,15 @@ sub geotag {
             verbose("+ Updating GPS info for $file");
             verbose("|- Coordinates set to ($new_lat, $new_lon)");
             $exif->SetNewValue(GPSLatitude => $new_lat);
+            $exif->SetNewValue(GPSLatitudeRef => "N") if ($new_lat >= 0);
+            $exif->SetNewValue(GPSLatitudeRef => "S") if ($new_lat < 0);
+            
             $exif->SetNewValue(GPSLongitude => $new_lon);
+            $exif->SetNewValue(GPSLongitudeRef => "E") if ($new_lon >= 0);
+            $exif->SetNewValue(GPSLongitudeRef => "W") if ($new_lon < 0);
+            
             $exif->SetNewValue(GPSAltitude => 0);   # Update this...
+            $exif->SetNewValue(GPSAltitudeRef => "Above Sea Level");
             $exif->WriteInfo($file);
         }
         else {
