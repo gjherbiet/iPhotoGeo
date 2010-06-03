@@ -1,0 +1,22 @@
+h1. iPhotoGeo
+
+This Perl scripts exports the GPS localization set by _Places_ in @iPhoto@ to the _EXIF_ tags stored inside your photo file.
+
+You can then use the GPS position of your photo file in any application, including exports to to _Flickr_ for instance.
+
+h2. Usage
+
+<pre>
+iPhotoGeo.pl [-h|--help] [-v|--verbose] [--version] [--library|-l library_path]
+
+    --help, -h          : Print this help, then exit
+    --version           : Print the script version, then exit
+    --verbose, -v       : Enable user information output to STDOUT
+
+    --library, -l       : Path to the iPhoto library to parse.
+                          (Default: /Users/<USERNAME>/Pictures/iPhoto Library)
+</pre>
+
+h2. License
+
+This program is licensed under the "GPL v.3":http://www.gnu.org/licenses/ license. See previous link or @gpl-3.0.texi@ for further details.
