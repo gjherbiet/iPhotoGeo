@@ -17,6 +17,18 @@ iPhotoGeo.pl [-h|--help] [-v|--verbose] [--version] [--library|-l library_path]
                           (Default: /Users/<USERNAME>/Pictures/iPhoto Library)
 </pre>
 
+h2. Requirements
+
+The following Perl packages are required:
+
+* @Image::ExifTool@
+* @Mac::PropertyList::XS@
+* @Data::Dumper@
+* @Getopt::Long@
+
+They can be installed either by using @cpan@ or package management tools,
+such as "MacPorts":http://www.macports.org
+
 h2. License
 
 This program is licensed under the "GPL v.3":http://www.gnu.org/licenses/ license. See previous link or @gpl-3.0.texi@ for further details.
